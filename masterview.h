@@ -30,6 +30,9 @@ public slots:
     void goPatientView();
     void goPreviousView();
 
+private slots:
+    void on_btBack_clicked();
+
 private:
     void pushWidgetToStackView(QWidget *widget);
 

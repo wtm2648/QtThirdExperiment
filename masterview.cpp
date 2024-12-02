@@ -23,6 +23,7 @@ void MasterView::goLoginView()
 
     pushWidgetToStackView(loginview);
 
+    connect(loginview, SIGNAL(loginSuccess()),this,SLOT(goWelcomeView()));
 }
 
 void MasterView::goWelcomeView()
@@ -67,6 +68,16 @@ void MasterView::goPatientView()
 
 void MasterView::goPreviousView()
 {
+    int cnt = ui->stackedWidget->count();
+
+    if(cnt > 1){
+        ui->stackedWidget->setCurrentIndex(cnt - 2);
+        ui->labelTitle->setText(ui->stackedWidget->currentWidget()->windowTitle());
+
+        QWidget *widget = ui->stackedWidget->widget(cnt - 1);
+        ui->stackedWidget->removeWidget(widget);
+        delete widget;
+    }
 
 }
 
@@ -76,5 +87,11 @@ void MasterView::pushWidgetToStackView(QWidget *widget)
     int cnt = ui->stackedWidget->count();
     ui->stackedWidget->setCurrentIndex(cnt - 1);
     ui->labelTitle->setText(widget->windowTitle());
+}
+
+
+void MasterView::on_btBack_clicked()
+{
+    goPreviousView();
 }
 
