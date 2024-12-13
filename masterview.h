@@ -26,12 +26,16 @@ public slots:
     void goWelcomeView();
     void goDoctorView();
     void goDepartmentView();
-    void goPatientEditView();
+    void goPatientEditView(int rowNum);
     void goPatientView();
     void goPreviousView();
 
 private slots:
     void on_btBack_clicked();
+
+    void on_stackedWidget_currentChanged(int arg1);
+
+    void on_btLogout_clicked();
 
 private:
     void pushWidgetToStackView(QWidget *widget);

@@ -15,6 +15,19 @@ public:
     explicit WellcomeView(QWidget *parent = nullptr);
     ~WellcomeView();
 
+private slots:
+
+    void on_Department_clicked();
+
+    void on_Doctor_clicked();
+
+    void on_Patient_clicked();
+
+signals:
+    void goDepartmentView();
+    void goDoctorView();
+    void goPatientView();
+
 private:
     Ui::WellcomeView *ui;
 };

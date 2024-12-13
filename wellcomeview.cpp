@@ -15,3 +15,22 @@ WellcomeView::~WellcomeView()
     qDebug() << "Destroy WelcomeView";
     delete ui;
 }
+
+
+void WellcomeView::on_Department_clicked()
+{
+    emit goDepartmentView();
+}
+
+
+void WellcomeView::on_Doctor_clicked()
+{
+    emit goDoctorView();
+}
+
+
+void WellcomeView::on_Patient_clicked()
+{
+    emit goPatientView();
+}
+

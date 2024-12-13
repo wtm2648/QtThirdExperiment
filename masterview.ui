@@ -21,6 +21,10 @@
        <property name="text">
         <string>返回</string>
        </property>
+       <property name="icon">
+        <iconset resource="lb4img.qrc">
+         <normaloff>:/img/return.svg</normaloff>:/img/return.svg</iconset>
+       </property>
       </widget>
      </item>
      <item>
@@ -61,6 +65,10 @@
        <property name="text">
         <string>注销</string>
        </property>
+       <property name="icon">
+        <iconset resource="lb4img.qrc">
+         <normaloff>:/img/logout.svg</normaloff>:/img/logout.svg</iconset>
+       </property>
       </widget>
      </item>
     </layout>
@@ -70,6 +78,8 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="lb4img.qrc"/>
+ </resources>
  <connections/>
 </ui>
